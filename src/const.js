@@ -1,3 +1,12 @@
 export const APIRoute = {
-  Quests : '/quests',
+  Quests: '/quests',
+}
+
+export const QuestsTabs = {
+  AllQuests: 'Все квесты',
+  Adventures: 'Приключения',
+  Horror: 'Ужасы',
+  Mystic: 'Мистика',
+  Detective: 'Детектив',
+  Scifi: 'Sci-Fi',
 }

@@ -8,7 +8,15 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
 
-const QuestsCatalog = () => (
+import { getQuests } from '../../../../store/selectors';
+import { useAppSelector } from '../../../../hooks';
+
+const QuestsCatalog = () => {
+
+const quests = useAppSelector(getQuests);
+console.log(quests);
+
+return (
   <>
     <S.Tabs>
       <S.TabItem>
@@ -224,6 +232,6 @@ const QuestsCatalog = () => (
       </S.QuestItem>
     </S.QuestsList>
   </>
-);
+)};
 
 export default QuestsCatalog;

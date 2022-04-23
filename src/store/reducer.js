@@ -8,7 +8,7 @@ const initialState = {
 const reducer = createReducer(initialState, (builder) => {
   builder
     .addCase(loadQuests, (state, action) => {
-      state.questions = action.payload;
+      state.quests = action.payload;
     });
 });
 

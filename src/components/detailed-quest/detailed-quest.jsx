@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { store } from '../../store';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import { getDetailedQuest } from '../../store/selectors';
 import { getQuestLevel, getQuestType } from '../../utils';
@@ -10,7 +11,8 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
-import { fetchDetailedQuestAction } from 'store/api-actions';
+import { removeDetailedQuest } from '../../store/action';
+import { fetchDetailedQuestAction } from '../../store/api-actions';
 
 const DetailedQuest = () => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
@@ -23,6 +25,10 @@ const DetailedQuest = () => {
 
   useEffect(() => {
     dispatch(fetchDetailedQuestAction(id));
+    return () => {
+      store.dispatch(removeDetailedQuest());
+      console.log(12312312);
+    };
   }, [id, dispatch]);
 
   const detailedQuest = useAppSelector(getDetailedQuest);
@@ -31,7 +37,6 @@ const DetailedQuest = () => {
     <MainLayout>
       <S.Main>
         <S.PageImage
-          // src={detailedQuest?.coverImg}
           src={`../${detailedQuest?.coverImg}`}
           alt={`Квест ${detailedQuest?.title}`}
           width="1366"

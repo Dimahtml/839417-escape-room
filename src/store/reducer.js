@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { loadQuests, loadDetailedQuest, changeGenre } from './action';
+import { loadQuests, loadDetailedQuest, removeDetailedQuest, changeGenre } from './action';
 import { QuestsGenres } from '../const';
 
 const initialState = {
@@ -15,6 +15,9 @@ const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(loadDetailedQuest, (state, action) => {
       state.detailedQuest = action.payload;
+    })
+    .addCase(removeDetailedQuest, (state) => {
+      state.detailedQuest = null;
     })
     .addCase(changeGenre, (state, action) => {
       state.genre = action.payload;

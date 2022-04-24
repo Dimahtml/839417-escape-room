@@ -3,7 +3,7 @@ import * as S from '../quests-catalog/quests-catalog.styled';
 import { useAppDispatch, useAppSelector } from '../../../../hooks';
 import { getActiveGenre } from '../../../../store/selectors';
 import { changeGenre } from '../../../../store/action';
-import { getQuestIcon, getQuestTitle } from '../../../../utils';
+import { getQuestIcon, getQuestType } from '../../../../utils';
 
 const TabItem = ({type}) => {
   const genre = useAppSelector(getActiveGenre);
@@ -18,7 +18,7 @@ const TabItem = ({type}) => {
         }}
       >
         {getQuestIcon(type)}
-        <S.TabTitle>{getQuestTitle(type)}</S.TabTitle>
+        <S.TabTitle>{getQuestType(type)}</S.TabTitle>
       </S.TabBtn>
     </S.TabItem>
   );

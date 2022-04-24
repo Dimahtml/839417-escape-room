@@ -6,7 +6,7 @@ import { getQuestLevel } from 'utils';
 
 const QuestItem = ({quest}) => (
   <S.QuestItem>
-    <S.QuestItemLink to="/quest">
+    <S.QuestItemLink to={`/detailed-quest/${quest.id}`}>
       <S.Quest>
         <S.QuestImage
           src={quest.coverImg}

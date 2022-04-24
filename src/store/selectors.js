@@ -2,6 +2,8 @@ import { QuestsGenres } from '../const';
 
 export const getQuests = ((state) => state.quests);
 
+export const getDetailedQuest = ((state) => state.detailedQuest);
+
 export const getActiveGenre = ((state) => state.genre);
 
 export const getQuestsByActiveGenre = (state) => {

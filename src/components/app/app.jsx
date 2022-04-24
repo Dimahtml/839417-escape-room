@@ -10,12 +10,14 @@ import Home from 'components/home/home';
 import { appTheme } from './common';
 import * as S from './app.styled';
 
+import { AppRoute } from '../../const';
+
 const App = () => (
   <ThemeProvider theme={appTheme}>
     <S.GlobalStyle />
     <Router>
       <Switch>
-        <Route exact path="/quest">
+        <Route exact path={AppRoute.DetailedQuest}>
           <DetailedQuest />
         </Route>
         <Route exact path="/contacts">

@@ -27,7 +27,7 @@ export const getQuestLevel = (inputLevel) => {
   return result;
 };
 
-export const getQuestTitle = (type) => {
+export const getQuestType = (type) => {
   let result = '';
 
   switch (type) {

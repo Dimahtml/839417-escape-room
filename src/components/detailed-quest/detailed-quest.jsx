@@ -19,15 +19,18 @@ const DetailedQuest = () => {
   const dispatch = useAppDispatch();
   const { id } = useParams();
 
-  const onBookingBtnClick = () => {
+  const handleOpenBtnClick = () => {
     setIsBookingModalOpened(true);
+  };
+
+  const handleCloseBtnClick = () => {
+    setIsBookingModalOpened(false);
   };
 
   useEffect(() => {
     dispatch(fetchDetailedQuestAction(id));
     return () => {
       store.dispatch(removeDetailedQuest());
-      console.log(12312312);
     };
   }, [id, dispatch]);
 
@@ -68,13 +71,15 @@ const DetailedQuest = () => {
               {detailedQuest?.description}
             </S.QuestDescription>
 
-            <S.QuestBookingBtn onClick={onBookingBtnClick}>
+            <S.QuestBookingBtn onClick={handleOpenBtnClick}>
               Забронировать
             </S.QuestBookingBtn>
           </S.PageDescription>
         </S.PageContentWrapper>
 
-        {isBookingModalOpened && <BookingModal />}
+        {
+          isBookingModalOpened &&
+          <BookingModal onCloseBtnClick={handleCloseBtnClick} />}
       </S.Main>
     </MainLayout>
   );

@@ -7,6 +7,7 @@ export const AppRoute = {
 export const APIRoute = {
   Quests: '/quests',
   DetailedQuest: 'http://localhost:3001/quests/:id',
+  Order: 'http://localhost:3001/orders',
 }
 
 export const QuestsGenres = {

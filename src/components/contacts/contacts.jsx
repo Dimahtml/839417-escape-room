@@ -2,7 +2,10 @@ import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
 import contactsMap from 'assets/img/contacts-map.jpg';
 import * as S from './contacts.styled';
 
+import { YMaps, Map, Placemark } from 'react-yandex-maps';
+
 const Contacts = () => (
+  <YMaps>
   <MainLayout>
     <S.Main>
       <S.ContentWrapper>
@@ -46,12 +49,20 @@ const Contacts = () => (
               alt="мы находимся по адресу Санкт-Петербург, Набережная реки Карповка, д 5"
               width="649"
               height="336"
-            />
+              />
+            <Map
+              defaultState={{ center: [59.9683, 30.3173], zoom: 17 }}
+              width={649}
+              height={336}
+            >
+              <Placemark geometry={[59.9683, 30.3173]} />
+            </Map>
           </S.ContactsMap>
         </S.Contacts>
       </S.ContentWrapper>
     </S.Main>
   </MainLayout>
+  </YMaps>
 );
 
 export default Contacts;

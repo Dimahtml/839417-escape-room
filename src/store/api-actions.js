@@ -22,9 +22,9 @@ export const fetchDetailedQuestAction = createAsyncThunk(
 
 export const sendOrderAction = createAsyncThunk(
   'data/sendOrder',
-  async ({name, phone, peopleCount, isLegal}, id) => {
+  async ({name, phone, peopleCount, isLegal}) => {
     const {data} = await api.post(APIRoute.Order, {name, phone, peopleCount, isLegal});
     store.dispatch(sendOrder(data));
-    store.dispatch(redirectToRoute(AppRoute.DetailedQuest.replace(':id', id)));
+    store.dispatch(redirectToRoute(AppRoute.Main));
   },
 );

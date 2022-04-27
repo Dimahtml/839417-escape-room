@@ -1,3 +1,5 @@
+export const TIMEOUT_SHOW_ERROR = 3000;
+
 export const AppRoute = {
   Contacts: '/contacts',
   DetailedQuest: '/detailed-quest/:id',
@@ -18,4 +20,11 @@ export const QuestsGenres = {
   Mystic: 'mystic',
   Detective: 'detective',
   Scifi: 'sci-fi',
+}
+
+export const HttpCode = {
+  BadRequest: 400,
+  Unauthorized: 401,
+  NotFound: 404,
+  ServerError: 500,
 }

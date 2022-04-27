@@ -6,6 +6,8 @@ export const getDetailedQuest = ((state) => state.detailedQuest);
 
 export const getActiveGenre = ((state) => state.genre);
 
+export const getErrorMessage = ((state) => state.error);
+
 export const getQuestsByActiveGenre = (state) => {
   const genre = getActiveGenre(state);
   const quests = getQuests(state);

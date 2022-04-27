@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { PageHeading as Heading } from 'components/common/common';
+import { Link, PageHeading as Heading } from 'components/common/common';
 import contactsBg from 'assets/img/contacts-bg.jpg';
 
 const Main = styled.main`
@@ -32,4 +32,9 @@ const ContentWrapper = styled.div`
   margin-bottom: 40px;
 `;
 
-export { Main, PageHeading, ContentWrapper };
+const NotFoundLink = styled(Link)`
+  margin-top: 24px;
+  font-size: 36px;
+`;
+
+export { Main, PageHeading, ContentWrapper, NotFoundLink };

@@ -1,3 +1,5 @@
+import { AppRoute } from 'const';
+
 import { MainLayout, PageTitle } from 'components/common/common';
 import * as S from './not-found.styled';
 
@@ -5,9 +7,10 @@ const NotFound = () => (
   <MainLayout>
     <S.Main>
       <S.ContentWrapper>
-        <S.PageHeading>
-          <PageTitle>404</PageTitle>
-        </S.PageHeading>
+        <PageTitle>Not Found 404</PageTitle>
+        <S.NotFoundLink to={AppRoute.Main}>
+          На главную
+        </S.NotFoundLink>
       </S.ContentWrapper>
     </S.Main>
   </MainLayout>

@@ -1,11 +1,12 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { loadQuests, loadDetailedQuest, removeDetailedQuest, changeGenre } from './action';
+import { loadQuests, loadDetailedQuest, removeDetailedQuest, changeGenre, setError } from './action';
 import { QuestsGenres } from '../const';
 
 const initialState = {
   quests: [],
   detailedQuest: null,
   genre: QuestsGenres.AllQuests,
+  error: '',
 };
 
 const reducer = createReducer(initialState, (builder) => {
@@ -21,6 +22,9 @@ const reducer = createReducer(initialState, (builder) => {
     })
     .addCase(changeGenre, (state, action) => {
       state.genre = action.payload;
+    })
+    .addCase(setError, (state, action) => {
+      state.error = action.payload;
     })
 });
 

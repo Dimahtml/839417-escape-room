@@ -11,3 +11,5 @@ export const sendOrder = createAction('data/sendOrder');
 export const removeDetailedQuest = createAction('quests/removeDetailedQuest');
 
 export const changeGenre = createAction('quests/changeGenre');
+
+export const setError = createAction('app/setError');

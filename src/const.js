@@ -1,4 +1,5 @@
 export const AppRoute = {
+  Contacts: '/contacts',
   DetailedQuest: '/detailed-quest/:id',
   Main: '/',
   NotFound: '/404',

@@ -2,7 +2,7 @@ import * as S from '../quests-catalog/quests-catalog.styled';
 
 import { useAppDispatch, useAppSelector } from '../../../../hooks';
 import { getActiveGenre } from '../../../../store/selectors';
-import { changeGenre } from '../../../../store/action';
+import { changeGenre } from '../../../../store/data-process/data-process';
 import { getQuestIcon, getQuestType } from '../../../../utils';
 
 const TabItem = ({type}) => {

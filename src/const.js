@@ -28,3 +28,8 @@ export const HttpCode = {
   NotFound: 404,
   ServerError: 500,
 }
+
+export const NameSpace = {
+  Data: 'DATA',
+  Error: 'ERROR',
+}

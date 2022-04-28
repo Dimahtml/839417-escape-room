@@ -11,7 +11,7 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
-import { removeDetailedQuest } from '../../store/action';
+import { removeDetailedQuest } from '../../store/data-process/data-process';
 import { fetchDetailedQuestAction } from '../../store/api-actions';
 
 const DetailedQuest = () => {

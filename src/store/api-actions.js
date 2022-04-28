@@ -1,7 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { api } from '../store';
 import { store } from '../store';
-import { redirectToRoute, loadQuests, loadDetailedQuest, sendOrder, setError } from './action';
+import { redirectToRoute, sendOrder } from './action';
+import { loadQuests, loadDetailedQuest } from '../store/data-process/data-process';
+import { setError } from '../store/error-process/error-process';
 import { handleError } from '../services/handle-error';
 import { APIRoute, AppRoute, TIMEOUT_SHOW_ERROR } from '../const';
 

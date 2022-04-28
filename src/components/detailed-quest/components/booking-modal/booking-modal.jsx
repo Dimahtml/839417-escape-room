@@ -75,6 +75,8 @@ const BookingModal = ({onCloseBtnClick}) => {
               id="booking-phone"
               name="booking-phone"
               placeholder="Телефон"
+              minLength={10}
+              maxLength={10}
               required
             />
           </S.BookingField>
